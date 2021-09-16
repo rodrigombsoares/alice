@@ -8,29 +8,29 @@
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
   <div class="w-50 p-3 border">
-    <form action="" method="post">
+    <form action="/onboarding/" method="post">
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="user_name" placeholder="Bob">
+        <input type="text" class="form-control" id="user_name" placeholder="Bob" name="name">
         <label for="user_name" class="form-label">Nome</label>
       </div>
 
       <div class="form-floating mb-3">
         <input type="tel" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" class="form-control" id="user_number"
-          placeholder="(00) 00000-0000">
+          placeholder="(00) 00000-0000" name="phone_number">
         <label for="user_number" class="form-label">Telefone</label>
         <div class="form-text">Formato: (00) 00000-0000</div>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="user_email" placeholder="bob@mail.com">
+        <input type="email" class="form-control" id="user_email" placeholder="bob@mail.com" name="email">
         <label for="user_email" class="form-label">Email para contato</label>
       </div>
 
       <div class="form-floating mb-3">
         <input type="email" multiple class="form-control" id="email_list"
-          placeholder="alice@mail.com, chandler@mail.com">
+          placeholder="alice@mail.com,chandler@mail.com" name="targets">
         <label for="email_list" class="form-label">Lista de Emails</label>
-        <div class="form-text">Exemplo: alice@mail.com, chandler@mail.com</div>
+        <div class="form-text">Exemplo: alice@mail.com,chandler@mail.com</div>
       </div>
 
       <button type="submit" class="btn btn-primary float-end">Enviar</button>

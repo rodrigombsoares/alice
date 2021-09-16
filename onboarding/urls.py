@@ -15,8 +15,8 @@ Including another URLconf
 """
 
 from django.urls import path
-from . import views
+from .views import OnboardingView
 
 urlpatterns = [
-    path('', views.index),
+    path('', OnboardingView.as_view()),
 ]
