@@ -1,6 +1,8 @@
 from django.views import View
 from django.shortcuts import render
 from .models import Target, Manager
+from onboarding.services import send_email
+
 
 class OnboardingView(View):
     def get(self, request):
@@ -15,10 +17,10 @@ class OnboardingView(View):
         manager = Manager(name=name, phone_number=phone_number, email=email)
         manager.save()
 
-        targetEmails = targets.split(",")
-        for targetEmail in targetEmails:
-            target = Target(email=targetEmail)
+        target_emails = targets.split(",")
+        for target_email in target_emails:
+            target = Target(email=target_email)
             target.save()
             manager.targets.add(target)
-
-        return render(request, 'index.html')
+        send_email(target_emails)
+        return render(request, 'sent.html')
